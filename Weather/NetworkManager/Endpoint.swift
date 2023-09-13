@@ -37,10 +37,7 @@ extension Endpoint: EndpointProtocol {
     }
     
     var headers: [String : String]? {
-        switch self {
-        case .getWeather:
-            return Constants.header
-        }
+        return nil
     }
     
     var parameters: [String : Any]? {
