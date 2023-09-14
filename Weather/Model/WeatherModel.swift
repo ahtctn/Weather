@@ -11,7 +11,7 @@ struct WeahterModel: Codable {
     let coord: CoordinateModel
     let weather: [Weather]
     let base: String
-    let main: MainModel
+    //let main: MainModel
     let visibility: Int
     let wind: WindModel
     let clouds: CloudsModel

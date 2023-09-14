@@ -28,7 +28,7 @@ class NetworkManager {
             }
             
             guard (200...299).contains(httpResponse.statusCode) else {
-                print("Invaild HTTP Respnse Status Code: \(httpResponse.statusCode)")
+                print("Invaild HTTP Response Status Code: \(httpResponse.statusCode)")
                 completion(.failure(.invalidResponse))
                 return
             }
@@ -36,7 +36,6 @@ class NetworkManager {
             do {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decodedData))
-                
             } catch let DecodingError.dataCorrupted(context) {
                 print(context)
             } catch let DecodingError.keyNotFound(key, context) {
@@ -57,8 +56,8 @@ class NetworkManager {
         task.resume()
     }
     
-    func getWeatherData(completion: @escaping NetworkCompletion<WeahterModel>) {
-        let endpoint = Endpoint<WeahterModel>.getWeather
+    func getWeatherData(completion: @escaping NetworkCompletion<WeahterModel>, lat: Double, lon: Double, appId: String) {
+        let endpoint = Endpoint<WeahterModel>.getWeather(lat: lat, lon: lon, appId: appId)
         request(endpoint, completion: completion)
     }
 }

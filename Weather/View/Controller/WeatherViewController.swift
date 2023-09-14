@@ -21,7 +21,7 @@ class WeatherViewController: UIViewController {
     //MARK: FUNCTIONS
     private func observeEvent() {
         viewModel.getWeather()
-        viewModel.eventHandler = { [weak self] event in
+        viewModel.eventHandler = { /*[weak self]*/ event in
             
             switch event {
             case .loading:

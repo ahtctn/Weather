@@ -13,17 +13,15 @@ class WeatherViewModel {
     func getWeather() {
         self.eventHandler?(.loading)
         
-        NetworkManager.shared.getWeatherData { result in
+        NetworkManager.shared.getWeatherData(completion: { result in
             switch result {
             case .success(let weather):
-                print(weather.weather)
-                print(weather.base)
-                print("success")
+                print("Weather: \(weather.weather)\nName:\(weather.name)")
+                print("\(weather.timezone) Ankara'nın timezone'u")
             case .failure(let error):
-                // Hata durumunda
-                print(error.localizedDescription)
+                print("\(error.localizedDescription) Network error happened in weather view model")
             }
-        }
+        }, lat: 39.9334, lon: 32.8597, appId: Constants.api_key)
     }
 }
 

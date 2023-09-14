@@ -17,7 +17,7 @@ protocol EndpointProtocol {
 }
 
 enum Endpoint<T: Decodable> {
-    case getWeather
+    case getWeather(lat: Double, lon: Double, appId: String)
 }
 
 extension Endpoint: EndpointProtocol {
@@ -37,11 +37,18 @@ extension Endpoint: EndpointProtocol {
     }
     
     var headers: [String : String]? {
-        return nil
+        var headers: [String : String]? {
+            return ["Authorization": "Bearer \(Constants.api_key)"]
+        }
+        return headers
     }
     
     var parameters: [String : Any]? {
-        return nil
+        switch self {
+        case let .getWeather(lat, lon, appid):
+            print("lat\(lat) lon \(lon)")
+            return ["lat": lat, "lon": lon, "appid": appid]
+        }
     }
     
     func request() -> URLRequest {
