@@ -13,8 +13,17 @@ class WeatherViewModel {
     func getWeather() {
         self.eventHandler?(.loading)
         
-        var weather: [WeahterModel] = []
-        
+        NetworkManager.shared.getWeatherData { result in
+            switch result {
+            case .success(let weather):
+                print(weather.weather)
+                print(weather.base)
+                print("success")
+            case .failure(let error):
+                // Hata durumunda
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
