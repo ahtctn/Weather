@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7B103B1A2AB1F1C2007FD453 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B103B192AB1F1C2007FD453 /* NetworkManager.swift */; };
 		7B103B1C2AB1F391007FD453 /* WeahterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B103B1B2AB1F391007FD453 /* WeahterViewModel.swift */; };
+		7B1D76062AB3C09400DA902B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1D76052AB3C09400DA902B /* Kingfisher */; };
+		7B1D76092AB3C0CF00DA902B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1D76082AB3C0CF00DA902B /* UIImageViewExtension.swift */; };
 		7B42AC902AB1E22D002A26AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42AC8F2AB1E22D002A26AF /* AppDelegate.swift */; };
 		7B42AC922AB1E22D002A26AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42AC912AB1E22D002A26AF /* SceneDelegate.swift */; };
 		7B42AC942AB1E22D002A26AF /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42AC932AB1E22D002A26AF /* WeatherViewController.swift */; };
@@ -30,6 +32,7 @@
 /* Begin PBXFileReference section */
 		7B103B192AB1F1C2007FD453 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7B103B1B2AB1F391007FD453 /* WeahterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeahterViewModel.swift; sourceTree = "<group>"; };
+		7B1D76082AB3C0CF00DA902B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		7B42AC8C2AB1E22D002A26AF /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B42AC8F2AB1E22D002A26AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B42AC912AB1E22D002A26AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,12 +58,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1D76062AB3C09400DA902B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B1D76072AB3C0C200DA902B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7B1D76082AB3C0CF00DA902B /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7B42AC832AB1E22D002A26AF = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +92,7 @@
 		7B42AC8E2AB1E22D002A26AF /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				7B1D76072AB3C0C200DA902B /* Extensions */,
 				7B42ACA82AB1E26C002A26AF /* Delegation */,
 				7B42ACA72AB1E263002A26AF /* NetworkManager */,
 				7B42ACA62AB1E260002A26AF /* Helpers */,
@@ -175,6 +188,9 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				7B1D76052AB3C09400DA902B /* Kingfisher */,
+			);
 			productName = Weather;
 			productReference = 7B42AC8C2AB1E22D002A26AF /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +219,9 @@
 				Base,
 			);
 			mainGroup = 7B42AC832AB1E22D002A26AF;
+			packageReferences = (
+				7B1D76042AB3C09400DA902B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 7B42AC8D2AB1E22D002A26AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,6 +263,7 @@
 				7B42ACAB2AB1E2C2002A26AF /* Constants.swift in Sources */,
 				7B42ACB12AB1E378002A26AF /* CoordinateModel.swift in Sources */,
 				7B103B1C2AB1F391007FD453 /* WeahterViewModel.swift in Sources */,
+				7B1D76092AB3C0CF00DA902B /* UIImageViewExtension.swift in Sources */,
 				7B42ACAD2AB1E2F2002A26AF /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +482,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B1D76042AB3C09400DA902B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B1D76052AB3C09400DA902B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B1D76042AB3C09400DA902B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B42AC842AB1E22D002A26AF /* Project object */;
 }
