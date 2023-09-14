@@ -46,6 +46,15 @@ class WeatherViewController: UIViewController {
     
     private func setUI() {
         DispatchQueue.main.async {
+            //self.view.translatesAutoresizingMaskIntoConstraints = false
+            //self.weaherImage.translatesAutoresizingMaskIntoConstraints = false
+            //self.locationLabel.translatesAutoresizingMaskIntoConstraints = false
+            //self.weatherSituationLabel.translatesAutoresizingMaskIntoConstraints = false
+            //self.weatherDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+            print("\(self.view.frame.height) HEIGHT")
+            print("\(self.view.frame.width) WIDTH")
+        }
+        DispatchQueue.main.async {
             if let weatherSituation = self.viewModel.weatherModel {
                 self.locationLabel.text = weatherSituation.name.uppercased()
                 
